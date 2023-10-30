@@ -1,21 +1,25 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { CardStyleInterpolators } from '@react-navigation/stack';
 import React from 'react';
-import
-  {
+import {
     SafeAreaView,
     StatusBar,
     useColorScheme,
 } from 'react-native';
-
+import
+  {
+    createDrawerNavigator,
+    DrawerContentScrollView,
+    DrawerItemList,
+  } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { CardStyleInterpolators } from '@react-navigation/stack';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import { Provider } from 'react-native-paper';
 import AnimTab1 from './bottomTab/AnimTab1';
 import Home from './screens/Home';
 import Colors from './constants/Colors';
-import { Provider } from 'react-native-paper';
 import Screen from './screens/Screen';
 import ProductsList from './screens/shop/ProductsList';
 import DetailsScreen from './screens/shop/DetailsScreen';
-import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import Fab from './screens/fab/Fab';
 
 const App = () =>
@@ -33,6 +37,7 @@ const App = () =>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={Colors.white} />
         <NavigationContainer>
+
           <RootStack />
         </NavigationContainer>
       </SafeAreaView>
@@ -48,13 +53,40 @@ const options = {
 }
 
 const Stack = createSharedElementStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const CustomDrawerContent = (props) =>
+{
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+    </DrawerContentScrollView>
+  );
+};
+
+const DrawerNavigator = () =>
+{
+  return (
+    <Drawer.Navigator
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      screenOptions={{
+        headerShown: false,
+        drawerStyle: {
+          backgroundColor: Colors.white,
+        }
+      }}
+    >
+      <Drawer.Screen name="Home" component={Home} />
+    </Drawer.Navigator>
+  );
+}
 
 const RootStack = () =>
 {
   return (
     <Stack.Navigator screenOptions={options}>
-      <Stack.Screen name="Home" component={Home}
-        options={{ title: 'Shop app', headerShown: true }} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Drawer" component={DrawerNavigator} />
       <Stack.Screen name="Tab1" component={AnimTab1} />
       <Stack.Screen name="Screen" component={Screen} />
       <Stack.Screen name="Products" component={ProductsList} />
