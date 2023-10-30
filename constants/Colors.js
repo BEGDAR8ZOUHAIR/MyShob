@@ -10,7 +10,7 @@ export default {
     light: '#EEEEEE',
     dark: '#333',
     gray: '#CCCCCC',
-    red: '#ff2f68',
+    red: '#ff0000',
     lightRed: '#ff4f7e',
     darkRed: '#d9365e',
     purple: '#8f06e4',

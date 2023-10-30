@@ -15,8 +15,6 @@ const Home = ({ navigation }) => {
       <List.Accordion
         title="List Animation"
         left={props => <List.Icon {...props} icon="folder" />}>
-        <List.Item title="Contacts Screen" onPress={() => navigate('Contacts')} />
-        <List.Item title="List Screen" onPress={() => navigate('List')} />
         <List.Item title="Products Screen" onPress={() => navigate('Products')} />
       </List.Accordion>
       <List.Accordion

@@ -10,7 +10,6 @@ import
 import AnimTab1 from './bottomTab/AnimTab1';
 import Home from './screens/Home';
 import Colors from './constants/Colors';
-import ListScreen from './screens/ListScreen';
 import { Provider } from 'react-native-paper';
 import Screen from './screens/Screen';
 import ProductsList from './screens/shop/ProductsList';
@@ -54,9 +53,8 @@ const RootStack = () =>
   return (
     <Stack.Navigator screenOptions={options}>
       <Stack.Screen name="Home" component={Home}
-        options={{ title: 'React-Native Ui', headerShown: true }} />
+        options={{ title: 'Shop app', headerShown: false }} />
       <Stack.Screen name="Tab1" component={AnimTab1} />
-      <Stack.Screen name="List" component={ListScreen} />
       <Stack.Screen name="Screen" component={Screen} />
       <Stack.Screen name="Products" component={ProductsList} />
       <Stack.Screen name="Details" component={DetailsScreen}
