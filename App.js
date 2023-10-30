@@ -1,12 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 import React from 'react';
 import
   {
     SafeAreaView,
     StatusBar,
     useColorScheme,
-  } from 'react-native';
+} from 'react-native';
+
 import AnimTab1 from './bottomTab/AnimTab1';
 import Home from './screens/Home';
 import Colors from './constants/Colors';
@@ -53,7 +54,7 @@ const RootStack = () =>
   return (
     <Stack.Navigator screenOptions={options}>
       <Stack.Screen name="Home" component={Home}
-        options={{ title: 'Shop app', headerShown: false }} />
+        options={{ title: 'Shop app', headerShown: true }} />
       <Stack.Screen name="Tab1" component={AnimTab1} />
       <Stack.Screen name="Screen" component={Screen} />
       <Stack.Screen name="Products" component={ProductsList} />
