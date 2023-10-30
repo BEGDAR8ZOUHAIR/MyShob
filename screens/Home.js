@@ -11,10 +11,6 @@ const Home = ({ navigation }) => {
         title="Bottom Tab Navigation"
         left={props => <List.Icon {...props} icon="folder" />}>
         <List.Item title="Animatable Tab1" onPress={() => navigate('Tab1')} />
-        <List.Item title="Animatable Tab2" onPress={() => navigate('Tab2')} />
-        <List.Item title="Animatable Tab3" onPress={() => navigate('Tab3')} />
-        <List.Item title="Animatable Tab4" onPress={() => navigate('Tab4')} />
-        <List.Item title="Animatable Tab5" onPress={() => navigate('Tab5')} />
       </List.Accordion>
       <List.Accordion
         title="List Animation"
@@ -27,11 +23,6 @@ const Home = ({ navigation }) => {
         title="Floating Action Button"
         left={props => <List.Icon {...props} icon="folder" />}>
         <List.Item title="Animated Fab" onPress={() => navigate('Fab')} />
-      </List.Accordion>
-      <List.Accordion
-        title="Drawer Navigation"
-        left={props => <List.Icon {...props} icon="folder" />}>
-        <List.Item title="Drawer 1" onPress={() => navigate('Drawer1')} />
       </List.Accordion>
     </View>
   )

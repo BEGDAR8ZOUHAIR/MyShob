@@ -8,13 +8,8 @@ import
     useColorScheme,
   } from 'react-native';
 import AnimTab1 from './bottomTab/AnimTab1';
-import AnimTab2 from './bottomTab/AnimTab2';
-import AnimTab3 from './bottomTab/AnimTab3';
 import Home from './screens/Home';
-import Tab4 from './bottomTab/Tab4';
-import Tab5 from './bottomTab/Tab5';
 import Colors from './constants/Colors';
-import ContactList from './screens/ContactList';
 import ListScreen from './screens/ListScreen';
 import { Provider } from 'react-native-paper';
 import Screen from './screens/Screen';
@@ -22,7 +17,6 @@ import ProductsList from './screens/shop/ProductsList';
 import DetailsScreen from './screens/shop/DetailsScreen';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import Fab from './screens/fab/Fab';
-import DrawerNav1 from './screens/drawer/drawer1/DrawerNav1';
 
 const App = () =>
 {
@@ -62,11 +56,6 @@ const RootStack = () =>
       <Stack.Screen name="Home" component={Home}
         options={{ title: 'React-Native Ui', headerShown: true }} />
       <Stack.Screen name="Tab1" component={AnimTab1} />
-      <Stack.Screen name="Tab2" component={AnimTab2} />
-      <Stack.Screen name="Tab3" component={AnimTab3} />
-      <Stack.Screen name="Tab4" component={Tab4} />
-      <Stack.Screen name="Tab5" component={Tab5} />
-      <Stack.Screen name="Contacts" component={ContactList} />
       <Stack.Screen name="List" component={ListScreen} />
       <Stack.Screen name="Screen" component={Screen} />
       <Stack.Screen name="Products" component={ProductsList} />
@@ -76,7 +65,6 @@ const RootStack = () =>
         }}
       />
       <Stack.Screen name="Fab" component={Fab} />
-      <Stack.Screen name="Drawer1" component={DrawerNav1} />
     </Stack.Navigator>
   )
 }
