@@ -8,18 +8,13 @@ yarn add @react-navigation/drawer
 or
 npm i @react-navigation/drawer
 ```
-# Animated Custom Drawer Navigation v6
 
-Link: https://youtu.be/FATLP5SkGxE
 
 ### Demo
 <img width="600" height="600" src="./gif/drawer1.png">
 
 ### Like, Share and subscribe and stay tuned for more such type of videos...
 _____________________________________________________________________
-# Floating Action Button (FAB)
-
-Tutorial: https://youtu.be/FATLP5SkGxE
 
 ### react-native-reanimated-2
 ```
